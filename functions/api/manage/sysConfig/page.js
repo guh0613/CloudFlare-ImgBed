@@ -73,6 +73,13 @@ export async function getPageConfig(db, env) {
             category: '全局设置',
         },
         {
+            id: 'logoLink',
+            label: 'Logo跳转链接',
+            placeholder: 'https://github.com/MarSeventh/CloudFlare-ImgBed',
+            tooltip: '点击Logo时跳转的链接，留空则使用默认GitHub链接',
+            category: '全局设置',
+        },
+        {
             id: 'bkInterval',
             label: '背景切换间隔',
             placeholder: '3000',
@@ -101,7 +108,7 @@ export async function getPageConfig(db, env) {
         },
         {
             id: 'defaultUploadChannel',
-            label: '默认上传渠道',
+            label: '默认渠道类型',
             type: 'select',
             options: [
                 { label: 'Telegram', value: 'telegram' },
@@ -111,6 +118,13 @@ export async function getPageConfig(db, env) {
                 { label: 'HuggingFace', value: 'huggingface' },
             ],
             placeholder: 'telegram',
+            category: '客户端设置',
+        },
+        {
+            id: 'defaultChannelName',
+            label: '默认渠道名称',
+            type: 'channelName',
+            tooltip: '指定默认使用的渠道名称，需先选择上传渠道',
             category: '客户端设置',
         },
         {
